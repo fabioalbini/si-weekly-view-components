@@ -1,0 +1,22 @@
+<h1>Products</h1>
+<div>
+  <%= form_tag products_path, method: :get do %>
+    <%= label_tag :query, 'Search:' %>
+    <%= text_field_tag :query, @query %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</div>
+
+<br /><br />
+<table id="products-list">
+  <thead>
+    <tr>Name</tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, product_path(product.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
