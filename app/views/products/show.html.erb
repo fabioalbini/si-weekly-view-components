@@ -1,18 +1,19 @@
-<p style="color: green"><%= notice %></p>
-
-<div>
-  <p>
-    <strong>ID:</strong>
-    <%= @product.id %>
+<div class="product">
+  <p class="product_id">
+    ID: <%= @product.id %>
   </p>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @product.name %>
+  <p class="product_name">
+    Name: <%= @product.name %>
   </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @product.description %>
+  <p class="product_description">
+    Description: <%= @product.description %>
+  </p>
+
+  <p class="product_status">
+    Status: <span style="color: grey;"><%= @product.status %></span>
   </p>
 </div>
+
+<%# <%= render(ProductComponent.new(product: @product)) %1> %>

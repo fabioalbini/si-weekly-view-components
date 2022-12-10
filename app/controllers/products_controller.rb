@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
   private
 
   def new_product(id:, name:, description: '')
-    OpenStruct.new(id: id, name: name, description: description)
+    status = id.to_i.even? ? 'active' : 'inactive'
+    OpenStruct.new(id: id, name: name, description: description, status: status)
   end
 end
